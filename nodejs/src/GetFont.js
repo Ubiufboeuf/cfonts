@@ -15,6 +15,7 @@
 
 'use strict';
 
+import BLOCK_FONT from '../fonts/block.json'
 const path = require('path');
 
 const { Debugging } = require('./Debugging.js');
@@ -31,11 +32,11 @@ const GetFont = (font) => {
 
 	// try loading the font file
 	try {
-		let FONTFACE = require(path.normalize(`../fonts/${font}.json`)); // read font file
+		// let FONTFACE = require(path.normalize(`../fonts/${font}.json`)); // read font file
 
 		Debugging.report(`GetFont: Fontface path selected: "${font}.json"`, 2);
 
-		return FONTFACE;
+		return BLOCK_FONT;
 	} catch (error) {
 		Debugging.error(`Font file for "${font}" errored out: ${error}`, 2);
 
